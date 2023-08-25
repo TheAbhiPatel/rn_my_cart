@@ -1,21 +1,24 @@
 import React from 'react';
 import {ThemeProvider} from '@shopify/restyle';
-import theme from './src/theme/light';
-import Box from './src/theme/Box';
-import Text from './src/theme/Text';
-import Home from './src/screens/home/Home';
+import theme, {palette} from './src/theme/light';
+import {NavigationContainer} from '@react-navigation/native';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import StackRoutes from './src/routes/StackRoutes';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Box
-        flex={1}
-        bg="$Background"
-        justifyContent="center"
-        alignItems="center">
-        <Text color="$primary">App</Text>
-        <Home />
-      </Box>
+      <SafeAreaProvider style={{flex: 1}}>
+        <NavigationContainer>
+          <SafeAreaView
+            style={{
+              flex: 1,
+              backgroundColor: palette.whiteCream,
+            }}>
+            <StackRoutes />
+          </SafeAreaView>
+        </NavigationContainer>
+      </SafeAreaProvider>
     </ThemeProvider>
   );
 };
