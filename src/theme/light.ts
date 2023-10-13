@@ -46,14 +46,27 @@ const theme = createTheme({
     heading: {
       fontWeight: 'bold',
       fontSize: 30,
+      color: 'black',
     },
     body: {
       fontSize: 20,
       lineHeight: 24,
+      color: 'black',
+    },
+    caption: {
+      fontSize: 12,
+      lineHeight: 16,
+      color: 'black',
+    },
+    footnote: {
+      fontSize: 10,
+      lineHeight: 16,
+      color: 'black',
     },
     defaults: {
       fontSize: 16,
       lineHeight: 20,
+      color: 'black',
     },
   },
 });
